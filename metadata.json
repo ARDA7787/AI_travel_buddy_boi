@@ -1,0 +1,7 @@
+{
+  "name": "Copy of AI Travel Buddy",
+  "description": "An agentic, multimodal AI companion that plans, monitors, and continuously adapts an independent traveler’s entire journey, solving pre‑trip planning overload, in‑trip logistics chaos, and safety anxiety in one integrated experience.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

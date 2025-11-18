@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Travel Buddy - Your Intelligent Travel Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    :root {
+      /* Refined Aqua Palette - "Oceanic Glass" */
+      --primary-50: #F0FDFA;
+      --primary-100: #CCFBF1;
+      --primary-200: #99F6E4;
+      --primary-300: #5EEAD4;
+      --primary-400: #2DD4BF;
+      --primary-500: #14B8A6;
+      --primary-600: #0D9488;
+      --primary-700: #0F766E;
+      --primary-800: #115E59;
+      --primary-900: #134E4A;
+
+      --surface-light: rgba(255, 255, 255, 0.7);
+      --surface-glass: rgba(255, 255, 255, 0.25);
+      --surface-border: rgba(255, 255, 255, 0.4);
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background-color: #0f172a; /* Fallback */
+      color: #1e293b;
+    }
+    
+    /* Premium Glass Effect - "Frosted" */
+    .glass {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-strong {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(40px) saturate(150%);
+      -webkit-backdrop-filter: blur(40px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.02), 
+        0 2px 4px -1px rgba(0, 0, 0, 0.02),
+        0 20px 50px -12px rgba(0, 0, 0, 0.05);
+    }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.01);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .glass-card:hover {
+      background: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Sophisticated Gradient Background */
+    .animated-gradient {
+      background: radial-gradient(circle at top left, #2DD4BF, transparent 40%),
+                  radial-gradient(circle at bottom right, #0D9488, transparent 40%),
+                  linear-gradient(135deg, #E0F2F1 0%, #CCFBF1 100%);
+      background-size: 200% 200%;
+      animation: breathe 15s ease infinite;
+      min-height: 100vh;
+    }
+
+    @keyframes breathe {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(13, 148, 136, 0.3);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(13, 148, 136, 0.5);
+    }
+
+    /* Utilities */
+    .text-balance { text-wrap: balance; }
+    .text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Smooth Transitions */
+    .transition-all-300 { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="animated-gradient text-gray-900 antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
